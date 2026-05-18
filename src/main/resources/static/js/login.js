@@ -24,7 +24,7 @@ async function iniciarSesion() {
     };
 
     try {
-        const respuesta = await fetch("/login", {
+        const respuesta = await fetch("/index", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(datos)
@@ -38,7 +38,7 @@ async function iniciarSesion() {
             sessionStorage.setItem("idUsuario", resultado.idUsuario);
             sessionStorage.setItem("nombre", resultado.nombre);
             console.log("Guardado idUsuario:", sessionStorage.getItem("idUsuario"));
-            window.location.href = "index.html";
+            window.location.href = "inicio.html";
         } else {
             alert("Correo o contraseña incorrectos");
         }

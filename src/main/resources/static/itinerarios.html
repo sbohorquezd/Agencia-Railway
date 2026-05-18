@@ -17,7 +17,7 @@
             <h2>Viajes Mi Colombia</h2>
         </div>
         <ul class="menu">
-            <li><a href="index.html">Mapa de Vuelos</a></li>
+            <li><a href="inicio.html">Mapa de Vuelos</a></li>
         </ul>
         <button onclick="cerrarSesion()">Cerrar Sesión</button>
     </div>
@@ -75,7 +75,7 @@
         function cerrarSesion() {
             sessionStorage.clear();
             fetch("/logout", { method: "POST" });
-            window.location.href = "login.html";
+            window.location.href = "inicio.html";
         }
 
         cargarItinerarios();
