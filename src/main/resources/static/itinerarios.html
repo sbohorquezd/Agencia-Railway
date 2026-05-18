@@ -75,7 +75,7 @@
         function cerrarSesion() {
             sessionStorage.clear();
             fetch("/logout", { method: "POST" });
-            window.location.href = "inicio.html";
+            window.location.href = "login.html";
         }
 
         cargarItinerarios();
