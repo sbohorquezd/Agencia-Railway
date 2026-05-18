@@ -6,7 +6,6 @@
   },
   "deploy": {
     "startCommand": "java -jar target/agencia-viajes-1.0.0.jar",
-    "healthcheckPath": "/login",
     "restartPolicyType": "ON_FAILURE"
   }
 }
