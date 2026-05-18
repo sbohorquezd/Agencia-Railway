@@ -24,7 +24,7 @@ async function iniciarSesion() {
     };
 
     try {
-        const respuesta = await fetch("/index", {
+        const respuesta = await fetch("/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(datos)
