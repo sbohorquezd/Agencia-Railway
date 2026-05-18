@@ -1,71 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencia de viajes Mi Colombia</title>
-    <script src="https://cdn.plot.ly/plotly-3.4.0.min.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login - Mi Colombia</title>
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
-    <div class="navbar">
 
-        <div class="logo-area">
-            <img src="img/logo.png" alt="Mi Colombia">
-            <h2>Viajes Mi Colombia</h2>
+    <div class="background">
+
+        <div class="login-box">
+
+
+
+            <img src="img/logo.png" alt="Mi Colombia" class="logo">
+
+            <h1>Iniciar Sesión</h1>
+
+            <p>
+                Ingresa tus credenciales para acceder a tu cuenta
+            </p>
+
+
+
+            <div class="input-group">
+
+                <label>
+                    Correo electrónico
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input type="email" id="correo" placeholder="Ingresa tu correo electrónico">
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Contraseña
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input type="password" placeholder="Ingresa tu contraseña" id="password">
+
+                    <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="options">
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    Recordarme
+
+                </label>
+
+                <a href="#">
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+            </div>
+
+
+            <button type="button" class="login-btn" onclick="iniciarSesion()">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Iniciar Sesión
+            </button>
+
+
+            <div class="register">
+
+                ¿No tienes una cuenta?
+
+                <a href="#">
+                    Regístrate aquí
+                </a>
+
+            </div>
+
         </div>
-
-        <ul class="menu">
-            <li><a href="itinerarios.html">Gestión de Itinerarios</a></li>
-        </ul>
-
-        <button onclick="cerrarSesion()">Cerrar Sesión</button>
 
     </div>
 
-    <div class="titulo">
-        <h1>¡Agenda tus próximos viajes y lleva el control contigo!</h1>
-    </div>
-    <div class="buscador">
+    <script src="js/login.js"></script>
 
-        <div class="campo">
-            <label> Origen</label>
-            <select class="Salida" id="aeropuertos"></select>
-        </div>
-
-        <div class="campo">
-            <label> Destino</label>
-            <select class="llegada" id="aeropuertol"></select>
-        </div>
-        <div class="campo fecha-box">
-            <label>Ida</label>
-            <input type="date" id="fechaIda">
-        </div>
-        <div class="campo fecha-box">
-            <label>Vuelta</label>
-            <input type="date" id="fechaVuelta">
-        </div>
-
-        <div class="botones">
-            <button onclick="limpiarMapa()">Limpiar</button>
-            <button type="button" onclick="guardarSeleccion()">Guardar</button>
-        </div>
-
-    </div>
-    <h3 id="duracionVuelo"></h3>
-    <div id="mapa" style="width: 90%;height:600px;position:absolute;margin: 10px;position:relative;left: 4%;"></div>
-    <script src="js/main.js"></script>
-    <script>
-        function cerrarSesion() {
-            sessionStorage.clear();
-            fetch("/logout", { method: "POST" });
-            window.location.href = "login.html";
-        }
-    </script>
-</body>
 </body>
 
 </html>
