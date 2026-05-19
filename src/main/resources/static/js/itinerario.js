@@ -48,7 +48,7 @@ async function cargarItinerarios() {
                             <td>${it.aeropuertoLlegada}</td>
                             <td>${it.fechaInicio || "-"}</td>
                             <td>${it.fechaFin || "-"}</td>
-                            <td>${it.duracionHoras} h</td>
+                            <td>${formatearDuracion(it.duracionHoras)} h</td>
                             <td>
                                 <button class="btn-editar" onclick="abrirEditar(${JSON.stringify(it).replace(/"/g, '&quot;')})">✏️ Editar</button>
                                 <button class="btn-eliminar" onclick="eliminarItinerario(${it.idItinerario})">🗑️ Eliminar</button>
