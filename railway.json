@@ -2,6 +2,6 @@
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
     "startCommand": "java -jar app.jar",
-    "restartPolicyType"g: "ON_FAILURE"
+    "restartPolicyType": "ON_FAILURE"
   }
 }
