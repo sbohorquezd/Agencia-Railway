@@ -1,5 +1,17 @@
 const API = "";
 
+function formatearDuracion(horas) {
+    horas = parseFloat(horas);
+
+    const h = Math.floor(horas);
+    const min = Math.round((horas - h) * 60);
+
+    if (h <= 0) return `${min} min`;
+    if (min <= 0) return `${h}h`;
+
+    return `${h}h ${min}min`;
+}
+
 function abrirItinerarios() {
     document.getElementById("modalItinerarios").style.display = "flex";
     cargarItinerarios();
@@ -12,6 +24,7 @@ function cerrarItinerarios() {
 function cerrarEditar() {
     document.getElementById("modalEditar").style.display = "none";
 }
+
 
 async function cargarItinerarios() {
     const idUsuario = sessionStorage.getItem("idUsuario") || 1;
@@ -48,7 +61,7 @@ async function cargarItinerarios() {
                             <td>${it.aeropuertoLlegada}</td>
                             <td>${it.fechaInicio || "-"}</td>
                             <td>${it.fechaFin || "-"}</td>
-                            <td>${formatearDuracion(it.duracionHoras)} h</td>
+                            <td>${formatearDuracion(it.duracionHoras)}</td>
                             <td>
                                 <button class="btn-editar" onclick="abrirEditar(${JSON.stringify(it).replace(/"/g, '&quot;')})">✏️ Editar</button>
                                 <button class="btn-eliminar" onclick="eliminarItinerario(${it.idItinerario})">🗑️ Eliminar</button>
